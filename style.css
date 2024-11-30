@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game_container {
+    border: 3px solid gray;
+    background: gray;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: yellow;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#gameGrid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+}
+
+#gameGrid .cell {
+    background-color: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    transition: all .5s;
+    cursor: pointer;
+    background: yellow;
+}
+
+.overlay {
+    display: none;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #fff;
+    font-weight: 700;
+    animation: float 2s infinite;
+}
+@keyframes float {
+    0%,100%{
+        transform: translate(-50%, -60%);
+    }
+    50%{
+        transform: translate(-50%, -40%);
+    }
+}
+.restart{
+    padding: 10px 30px;
+    background: rgb(126, 21, 182);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 992px){
+    #gameGrid {
+        
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media screen and (max-width: 490px){
+    #gameGrid {
+        margin-top: 20px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #gameGrid .cell {
+        width: 80px;
+        height: 80px;
+       
+    }
+    h1 {
+        font-size: 39px;
+        margin-bottom: 0;
+    }
+    p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
